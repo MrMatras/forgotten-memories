@@ -1,2 +1,2 @@
 # forgotten-memories-pre alpha
-I want to share the sources of my game, they will be available soon when I return home (in 10 days)
+My game is a free project for many people, if you want to help me, I will be very grateful, thanks in advance
