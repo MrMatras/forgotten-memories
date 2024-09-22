@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vk5xmuudd11r"]
+
+[ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="3_xtogg"]
+
+[node name="Game" type="Node3D"]
+
+[node name="FPSMeter" parent="." instance=ExtResource("3_xtogg")]

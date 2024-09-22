@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://clxa87c08kalo"]
+
+[ext_resource type="AudioStream" uid="uid://cain6q7a44y13" path="res://assets/sounds/The One And Only Good Moment (main menu).mp3" id="1_r436p"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_r436p")
+autoplay = true
+bus = &"Menu"

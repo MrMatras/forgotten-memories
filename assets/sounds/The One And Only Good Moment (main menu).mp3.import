@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cain6q7a44y13"
+path="res://.godot/imported/The One And Only Good Moment (main menu).mp3-c67e03cc95209879cc362569cdbacc70.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/The One And Only Good Moment (main menu).mp3"
+dest_files=["res://.godot/imported/The One And Only Good Moment (main menu).mp3-c67e03cc95209879cc362569cdbacc70.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
