@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce55nm1awyvrt"]
+[gd_scene load_steps=4 format=3 uid="uid://ce55nm1awyvrt"]
 
 [ext_resource type="Script" path="res://assets/scripts/Options.gd" id="1_3imn7"]
 [ext_resource type="FontFile" uid="uid://cjeifscgm0rd" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_kxvyc"]
-[ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="4_54gqw"]
-[ext_resource type="PackedScene" uid="uid://dolgj086rhot5" path="res://assets/scenes/windowed_mode_button.tscn" id="4_ofm2g"]
-[ext_resource type="PackedScene" uid="uid://chu6mme5xkcdg" path="res://assets/scenes/resolution_mode_button.tscn" id="5_i2fo1"]
+[ext_resource type="PackedScene" path="res://assets/scenes/fps_meter.tscn" id="4_54gqw"]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -38,18 +36,18 @@ offset_top = 80.0
 offset_right = 1088.0
 offset_bottom = 568.0
 
-[node name="Volume" type="Button" parent="Control"]
+[node name="volume_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 86.0
-offset_top = 326.0
-offset_right = 232.0
-offset_bottom = 370.0
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 196.0
+offset_bottom = 274.0
 theme_override_fonts/font = ExtResource("1_kxvyc")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 flat = true
 
-[node name="VolumeSlider" type="HSlider" parent="Control/Volume"]
+[node name="VolumeSlider" type="HSlider" parent="Control/volume_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.342
@@ -65,30 +63,42 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="BackToMenu" type="Button" parent="Control"]
+[node name="button_back_to_menu" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 988.0
-offset_right = 174.0
-offset_bottom = 1032.0
+offset_left = 32.0
+offset_top = 984.0
+offset_right = 178.0
+offset_bottom = 1028.0
 theme_override_fonts/font = ExtResource("1_kxvyc")
 theme_override_font_sizes/font_size = 40
 text = "Back"
 flat = true
 
+[node name="button_graphics" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 101.0
+offset_right = 684.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("1_kxvyc")
+theme_override_font_sizes/font_size = 40
+text = "Graphics"
+flat = true
+
+[node name="button_audio(idk why add)" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 99.0
+offset_right = 318.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("1_kxvyc")
+theme_override_font_sizes/font_size = 40
+text = "Audio"
+flat = true
+
 [node name="FPSMeter" parent="." instance=ExtResource("4_54gqw")]
+offset_bottom = 32.0
 
-[node name="windowed_mode_button" parent="." instance=ExtResource("4_ofm2g")]
-offset_left = 68.0
-offset_top = 116.0
-offset_right = -1027.0
-offset_bottom = -898.0
-
-[node name="resolution_mode_button" parent="." instance=ExtResource("5_i2fo1")]
-offset_left = 67.0
-offset_top = 197.0
-offset_right = -1025.0
-offset_bottom = -816.0
-
-[connection signal="value_changed" from="Control/Volume/VolumeSlider" to="Control" method="_on_volume_slider_value_changed"]
-[connection signal="pressed" from="Control/BackToMenu" to="Control" method="_on_back_to_menu_pressed"]
+[connection signal="value_changed" from="Control/volume_button/VolumeSlider" to="Control" method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="Control/button_back_to_menu" to="Control" method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="Control/button_graphics" to="Control" method="_on_button_graphics_pressed"]

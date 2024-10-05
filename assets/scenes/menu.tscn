@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cjeifscgm0rd" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_atrl1"]
 [ext_resource type="Script" path="res://assets/scripts/Menu.gd" id="1_hyrqt"]
-[ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="3_ocd0j"]
+[ext_resource type="PackedScene" path="res://assets/scenes/fps_meter.tscn" id="3_ocd0j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huj0e"]
 

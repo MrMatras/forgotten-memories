@@ -12,3 +12,6 @@ func _on_volume_slider_value_changed(value):
 		AudioServer.set_bus_mute(master_bus, true)
 	else:
 		AudioServer.set_bus_mute(master_bus, false)
+
+func _on_button_graphics_pressed():
+	get_tree().change_scene_to_file("res://assets/scenes/options_function/options_graphics.tscn")
