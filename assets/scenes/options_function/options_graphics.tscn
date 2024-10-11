@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/options_graphics.gd" id="1_ban25"]
 [ext_resource type="PackedScene" uid="uid://chu6mme5xkcdg" path="res://assets/scenes/options_function/resolution_mode_button.tscn" id="1_xun1m"]
 [ext_resource type="PackedScene" uid="uid://dolgj086rhot5" path="res://assets/scenes/options_function/windowed_mode_button.tscn" id="2_0fv4x"]
-[ext_resource type="PackedScene" path="res://assets/scenes/fps_meter.tscn" id="2_fb75k"]
+[ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="2_fb75k"]
 [ext_resource type="FontFile" uid="uid://cjeifscgm0rd" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="3_apd6o"]
 
 [node name="options_graphics" type="Control"]
@@ -63,9 +63,9 @@ flat = true
 
 [node name="button_back_to_menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 83.0
+offset_left = 91.0
 offset_top = 754.0
-offset_right = 275.0
+offset_right = 283.0
 offset_bottom = 829.0
 theme_override_fonts/font = ExtResource("3_apd6o")
 theme_override_font_sizes/font_size = 52

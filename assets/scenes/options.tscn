@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scripts/Options.gd" id="1_3imn7"]
 [ext_resource type="FontFile" uid="uid://cjeifscgm0rd" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_kxvyc"]
-[ext_resource type="PackedScene" path="res://assets/scenes/fps_meter.tscn" id="4_54gqw"]
+[ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="4_54gqw"]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -65,21 +65,21 @@ value = 1.0
 
 [node name="button_back_to_menu" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 984.0
-offset_right = 178.0
-offset_bottom = 1028.0
+offset_left = 48.0
+offset_top = 992.0
+offset_right = 194.0
+offset_bottom = 1046.0
 theme_override_fonts/font = ExtResource("1_kxvyc")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 52
 text = "Back"
 flat = true
 
 [node name="button_graphics" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 477.0
-offset_top = 101.0
-offset_right = 684.0
-offset_bottom = 145.0
+offset_left = 408.0
+offset_top = 72.0
+offset_right = 615.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("1_kxvyc")
 theme_override_font_sizes/font_size = 40
 text = "Graphics"
@@ -87,10 +87,10 @@ flat = true
 
 [node name="button_audio(idk why add)" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 136.0
-offset_top = 99.0
-offset_right = 318.0
-offset_bottom = 145.0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 270.0
+offset_bottom = 118.0
 theme_override_fonts/font = ExtResource("1_kxvyc")
 theme_override_font_sizes/font_size = 40
 text = "Audio"
