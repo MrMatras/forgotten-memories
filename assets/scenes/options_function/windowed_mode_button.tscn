@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dolgj086rhot5"]
 
-[ext_resource type="PackedScene" uid="uid://dnaoblnpt7xpr" path="res://assets/scenes/options_resolution.tscn" id="1_sfm67"]
+[ext_resource type="PackedScene" uid="uid://dnaoblnpt7xpr" path="res://assets/scenes/options_function/options_resolution.tscn" id="1_sfm67"]
 [ext_resource type="Script" path="res://assets/scripts/windowed_mode_button.gd" id="2_hcnxc"]
 
 [node name="windowed_mode_button" instance=ExtResource("1_sfm67")]

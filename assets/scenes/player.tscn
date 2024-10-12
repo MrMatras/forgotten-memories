@@ -20,5 +20,5 @@ mesh = SubResource("CapsuleMesh_bdln1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0201333, 0.50827, 0)
 script = ExtResource("2_n13lb")
 
-[node name="Camera3D" type="Camera3D" parent="head"]
+[node name="camera" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168694, 0)

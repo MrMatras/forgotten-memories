@@ -5,3 +5,7 @@ func _on_button_audio_pressed():
 
 func _on_button_back_to_menu_pressed():
 	get_tree().change_scene_to_file("res://assets/scenes/menu.tscn")
+
+
+func _on_button_vsync_pressed():
+	pass # Replace with function body.
