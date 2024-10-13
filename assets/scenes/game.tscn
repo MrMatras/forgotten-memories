@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://vk5xmuudd11r"]
+[gd_scene load_steps=9 format=3 uid="uid://vk5xmuudd11r"]
 
 [ext_resource type="PackedScene" uid="uid://qrfof3m2iekg" path="res://assets/scenes/player.tscn" id="2_yvu5a"]
 [ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="3_xtogg"]
@@ -16,6 +16,15 @@ sky = SubResource("Sky_pneps")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wlml"]
+albedo_color = Color(0.317647, 0.439216, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7oij"]
+albedo_color = Color(0.203922, 0.258824, 0.568627, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jm23"]
+albedo_color = Color(0.203922, 0.258824, 0.568627, 1)
+
 [node name="Game" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -28,9 +37,20 @@ environment = SubResource("Environment_xx1j8")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.393806, 0)
 use_collision = true
-size = Vector3(34.5945, 1, 52.4846)
+size = Vector3(60.4244, 0.002, 52.4846)
+material = SubResource("StandardMaterial3D_3wlml")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09542, 0.833847, -2.22455)
+size = Vector3(2.47083, 1.68887, 3.04867)
+material = SubResource("StandardMaterial3D_e7oij")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09665, 0.481461, -2.25533)
+size = Vector3(4.10497, 0.969178, 1)
+material = SubResource("StandardMaterial3D_4jm23")
 
 [node name="player" parent="." instance=ExtResource("2_yvu5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64957, 1.2534, 1.55294)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64957, 0.641629, 1.55294)
 
 [node name="FPSMeter" parent="." instance=ExtResource("3_xtogg")]

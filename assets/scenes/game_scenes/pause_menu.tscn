@@ -123,5 +123,4 @@ libraries = {
 "": SubResource("AnimationLibrary_uqfd2")
 }
 
-[connection signal="pressed" from="PanelContainer/button_resume" to="." method="_on_button_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/button_quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/button_resume" to="." method="pause_or_unpause"]
