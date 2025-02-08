@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scripts/FPSMeter.gd" id="1_hyr62"]
 
-[node name="FPSMeter" type="Control"]
+[node name="fps" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -10,7 +10,7 @@ offset_bottom = 40.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="FPS" type="Label" parent="CanvasLayer"]
+[node name="fps_label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "FPS:"

@@ -10,15 +10,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $head/camera                         
 
 func _physics_process(delta):
-	# Добавляем гравитацию
+	#гравитация
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Обрабатываем прыжок
+	#обработка прыжка
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Получаем направление ввода и обрабатываем движение
+	#ввод и обработка движений
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vk5xmuudd11r"]
+[gd_scene load_steps=10 format=3 uid="uid://vk5xmuudd11r"]
 
 [ext_resource type="PackedScene" uid="uid://qrfof3m2iekg" path="res://assets/scenes/player.tscn" id="2_yvu5a"]
 [ext_resource type="PackedScene" uid="uid://bsk60btopsin7" path="res://assets/scenes/fps_meter.tscn" id="3_xtogg"]
+[ext_resource type="PackedScene" uid="uid://deukw80jfk3mq" path="res://assets/scenes/game_scenes/pause_menu.tscn" id="3_y3drb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4sdvc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,4 +54,10 @@ material = SubResource("StandardMaterial3D_4jm23")
 [node name="player" parent="." instance=ExtResource("2_yvu5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64957, 0.641629, 1.55294)
 
-[node name="FPSMeter" parent="." instance=ExtResource("3_xtogg")]
+[node name="fps" parent="." instance=ExtResource("3_xtogg")]
+
+[node name="pause_menu" parent="." instance=ExtResource("3_y3drb")]
+offset_left = -552.0
+offset_top = 237.0
+offset_right = -552.0
+offset_bottom = 237.0
