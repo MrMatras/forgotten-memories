@@ -1,0 +1,208 @@
+[gd_scene load_steps=3 format=3 uid="uid://btkgsdmdlcnne"]
+
+[ext_resource type="Script" path="res://assets/scripts/options_scripts/options_graphics.gd" id="1_f0ild"]
+[ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_pugrx"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_f0ild")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1928.0
+offset_bottom = 1088.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+
+[node name="back_button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.889
+anchor_right = 0.012
+anchor_bottom = 0.889
+offset_left = 0.959999
+offset_top = -0.120056
+offset_right = 240.96
+offset_bottom = 71.8799
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 57
+text = "Back"
+flat = true
+
+[node name="gamesettings_button" type="Button" parent="Control/back_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.737
+anchor_top = 0.067
+anchor_right = 0.737
+anchor_bottom = 0.067
+offset_left = 1215.12
+offset_top = -888.824
+offset_right = 1559.12
+offset_bottom = -844.824
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Game Settings"
+flat = true
+
+[node name="graphics_button" type="Button" parent="Control/back_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.433
+anchor_top = 0.067
+anchor_right = 0.433
+anchor_bottom = 0.067
+offset_left = 704.08
+offset_top = -892.824
+offset_right = 896.08
+offset_bottom = -844.824
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Graphics"
+flat = true
+
+[node name="audio_button" type="Button" parent="Control/back_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.087
+anchor_top = 0.067
+anchor_right = 0.087
+anchor_bottom = 0.067
+offset_left = 123.12
+offset_top = -892.824
+offset_right = 267.12
+offset_bottom = -844.824
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Audio"
+flat = true
+
+[node name="res_text" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.244
+anchor_right = 0.033
+anchor_bottom = 0.244
+offset_left = 0.639999
+offset_top = 0.47998
+offset_right = 230.64
+offset_bottom = 78.48
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Resolution
+   Mode"
+
+[node name="resolution_button" type="OptionButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.183
+anchor_top = 0.259
+anchor_right = 0.183
+anchor_bottom = 0.259
+offset_left = 0.639984
+offset_top = 0.279999
+offset_right = 160.64
+offset_bottom = 48.28
+
+[node name="window_text" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.393
+anchor_right = 0.033
+anchor_bottom = 0.393
+offset_left = 0.639999
+offset_top = -0.440002
+offset_right = 253.64
+offset_bottom = 47.56
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Window Mode"
+
+[node name="windowmode_button" type="OptionButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = 2.5
+anchor_right = -0.15
+anchor_bottom = 2.5
+offset_left = 648.0
+offset_top = -2276.0
+offset_right = 808.0
+offset_bottom = -2228.0
+
+[node name="v-sync label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.489
+anchor_right = 0.033
+anchor_bottom = 0.489
+offset_left = 0.639999
+offset_top = -0.119995
+offset_right = 138.64
+offset_bottom = 39.88
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "V-Sync"
+
+[node name="CheckBox" type="CheckBox" parent="Control/v-sync label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.217
+anchor_right = 1.217
+offset_left = 0.0540009
+offset_right = 24.054
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+
+[node name="show_fps_option_label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.556
+anchor_right = 0.033
+anchor_bottom = 0.556
+offset_left = 0.639999
+offset_top = -0.480042
+offset_right = 104.64
+offset_bottom = 39.52
+theme_override_fonts/font = ExtResource("1_pugrx")
+theme_override_font_sizes/font_size = 40
+text = "Show FPS"
+
+[node name="fps_checkbox" type="CheckBox" parent="Control/show_fps_option_label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.13
+anchor_top = -0.2
+anchor_right = 1.13
+anchor_bottom = -0.2
+offset_left = 0.0800018
+offset_right = 24.08
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+
+[node name="fps_label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="Control/back_button" to="Control" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/back_button/audio_button" to="Control" method="_on_audio_button_pressed"]
+[connection signal="pressed" from="Control/v-sync label/CheckBox" to="Control" method="_on_vsync_check_box_pressed"]
+[connection signal="toggled" from="Control/show_fps_option_label/fps_checkbox" to="Control" method="_on_fps_checkbox_toggled"]

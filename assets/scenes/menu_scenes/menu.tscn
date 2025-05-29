@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://cruw6niu5mbrv"]
+
+[ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_atrl1"]
+[ext_resource type="Script" path="res://assets/scripts/menu_scripts/menu.gd" id="1_hyrqt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huj0e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_037pe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebqmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7taxt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7jna"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_hyrqt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 80.0
+offset_right = 1088.0
+offset_bottom = 568.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_atrl1")
+theme_override_font_sizes/font_size = 53
+text = "Forgotten Memories"
+
+[node name="quit" type="Button" parent="Control/VBoxContainer/Title"]
+layout_mode = 2
+anchor_left = 0.005
+anchor_top = 5.34
+anchor_right = 0.005
+anchor_bottom = 5.34
+offset_left = -0.12
+offset_right = 75.88
+offset_bottom = 42.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_atrl1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
+text = "Quit"
+
+[node name="startgame" type="Button" parent="Control/VBoxContainer/Title"]
+layout_mode = 2
+anchor_left = 0.004
+anchor_top = 2.7
+anchor_right = 0.004
+anchor_bottom = 2.7
+offset_left = -0.0960002
+offset_right = 189.904
+offset_bottom = 29.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_atrl1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
+text = "Start Game"
+
+[node name="options" type="Button" parent="Control/VBoxContainer/Title"]
+layout_mode = 2
+anchor_left = 0.002
+anchor_top = 4.04
+anchor_right = 0.002
+anchor_bottom = 4.04
+offset_left = -0.0480001
+offset_top = 6.0
+offset_right = 151.952
+offset_bottom = 35.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_atrl1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
+text = "Settings"
+
+[connection signal="pressed" from="Control/VBoxContainer/Title/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Title/startgame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Title/startgame" to="Control/VBoxContainer/Title/startgame" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Title/options" to="." method="_on_settings_pressed"]
