@@ -1,6 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg4syphkhrv7e"]
+[gd_scene load_steps=16 format=3 uid="uid://cg4syphkhrv7e"]
 
 [ext_resource type="Script" path="res://assets/scripts/scripts_for_testing/player2.gd" id="1_mng55"]
+[ext_resource type="AudioStream" uid="uid://dxsijt0j3lm6n" path="res://assets/sounds/analog_mannequin - milkcassettex.mp3" id="2_h0opc"]
+[ext_resource type="Script" path="res://assets/scripts/game_scripts/pausemenu.gd" id="3_vn63v"]
+[ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_k21y6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1xai"]
 
@@ -14,13 +17,19 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obr51"]
-albedo_color = Color(0, 0.317647, 0.141176, 1)
+albedo_color = Color(0.317647, 0.439216, 0.152941, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4ory"]
-albedo_color = Color(0.0588235, 0.498039, 1, 1)
+albedo_color = Color(0.203922, 0.258824, 0.568627, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tacls"]
-albedo_color = Color(0.0588235, 0.498039, 1, 1)
+albedo_color = Color(0.203922, 0.258824, 0.568627, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqggo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cob4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_joqpl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oa066"]
 height = 1.81612
@@ -29,30 +38,61 @@ height = 1.81612
 
 [node name="game_test" type="Node3D"]
 
-[node name="DIrectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0239263, 10.5912, 0.128931)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.419452, 0.907777, 0, -0.907777, 0.419452, 0.0239263, 12.3351, 5.81963)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d3m35")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
-size = Vector3(20.6864, 0.002, 28.153)
+size = Vector3(36.6876, 0.002, 41.3563)
 material = SubResource("StandardMaterial3D_obr51")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0227284, 0.107045, -1.68327)
-size = Vector3(1.31601, 0.19205, 0.753969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022531, 0.148162, -1.69161)
+size = Vector3(1.45579, 0.281166, 0.608174)
 material = SubResource("StandardMaterial3D_h4ory")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44404, 0.255829, -1.77019)
-size = Vector3(1, 0.360242, 0.84094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44404, 0.173853, -1.77019)
+size = Vector3(1, 0.360242, 1.13008)
 material = SubResource("StandardMaterial3D_tacls")
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00416541, 0.973485, -0.000760972)
 script = ExtResource("1_mng55")
+
+[node name="cassette_container" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336399, -4.36985, -1.02861)
+
+[node name="cassette_1" type="CSGBox3D" parent="player/cassette_container" groups=["cassette"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500915, 1.53124, 0.435713)
+use_collision = true
+size = Vector3(0.155973, 0.135769, 0.111101)
+
+[node name="cass_collision_1" type="CollisionShape3D" parent="player/cassette_container/cassette_1"]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+shape = SubResource("BoxShape3D_gqggo")
+
+[node name="cassette_2" type="CSGBox3D" parent="player/cassette_container" groups=["cassette"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31162, 1.53203, 0.437144)
+use_collision = true
+size = Vector3(0.157, 0.136, 0.111)
+
+[node name="cass_collision_2" type="CollisionShape3D" parent="player/cassette_container/cassette_2"]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+shape = SubResource("BoxShape3D_cob4j")
+
+[node name="cassette_3" type="CSGBox3D" parent="player/cassette_container" groups=["cassette"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127017, 1.53249, 0.436524)
+use_collision = true
+size = Vector3(0.157, 0.136, 0.111)
+
+[node name="cass_collision_3" type="CollisionShape3D" parent="player/cassette_container/cassette_3"]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+shape = SubResource("BoxShape3D_joqpl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.453539, 0)
@@ -67,4 +107,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315079, 0)
 
 [node name="camera" type="Camera3D" parent="player/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0938854, 0)
-fov = 69.9364
+fov = 70.0
+
+[node name="raycast_cam" type="RayCast3D" parent="player/head/camera"]
+exclude_parent = false
+collide_with_areas = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="player/head/camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.221194, 0)
+stream = ExtResource("2_h0opc")
+
+[node name="pausemenu" type="CanvasLayer" parent="."]
+script = ExtResource("3_vn63v")
+
+[node name="menu" type="Control" parent="pausemenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="pausemenu/menu"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="continue" type="Button" parent="pausemenu/menu/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.274
+anchor_right = 0.033
+anchor_bottom = 0.274
+offset_left = 0.639999
+offset_top = 0.0799866
+offset_right = 160.64
+offset_bottom = 40.08
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_k21y6")
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+flat = true
+
+[node name="settings" type="Button" parent="pausemenu/menu/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.348
+anchor_right = 0.033
+anchor_bottom = 0.348
+offset_left = 0.639999
+offset_top = 0.159973
+offset_right = 160.64
+offset_bottom = 37.16
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_k21y6")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+flat = true
+
+[node name="exit_to_menu" type="Button" parent="pausemenu/menu/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.415
+anchor_right = 0.033
+anchor_bottom = 0.415
+offset_left = 0.639999
+offset_top = -0.200012
+offset_right = 84.64
+offset_bottom = 36.8
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_k21y6")
+theme_override_font_sizes/font_size = 32
+text = "Menu"
+flat = true
+
+[node name="title" type="Label" parent="pausemenu/menu/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.126
+anchor_right = 0.037
+anchor_bottom = 0.126
+offset_left = 0.959999
+offset_top = -0.0800018
+offset_right = 558.96
+offset_bottom = 49.92
+theme_override_fonts/font = ExtResource("4_k21y6")
+theme_override_font_sizes/font_size = 53
+text = "Forgotten Memories"
+
+[connection signal="pressed" from="pausemenu/menu/ColorRect/continue" to="pausemenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="pausemenu/menu/ColorRect/settings" to="pausemenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="pausemenu/menu/ColorRect/exit_to_menu" to="pausemenu" method="_on_menu_pressed"]

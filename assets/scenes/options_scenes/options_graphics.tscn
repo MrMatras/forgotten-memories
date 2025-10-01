@@ -12,16 +12,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_f0ild")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 0
-offset_right = 1928.0
-offset_bottom = 1088.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1088.0
-
 [node name="back_button" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -53,8 +43,7 @@ offset_bottom = -844.824
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pugrx")
 theme_override_font_sizes/font_size = 40
-text = "Game Settings
-(nothing to see here)"
+text = "Game Settings"
 flat = true
 
 [node name="graphics_button" type="Button" parent="Control/back_button"]
@@ -146,7 +135,7 @@ offset_top = -120.0
 offset_right = 493.95
 offset_bottom = -72.0
 
-[node name="v-sync label" type="Label" parent="Control"]
+[node name="vsync_label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033
@@ -161,7 +150,7 @@ theme_override_fonts/font = ExtResource("1_pugrx")
 theme_override_font_sizes/font_size = 40
 text = "V-Sync"
 
-[node name="CheckBox" type="CheckBox" parent="Control/v-sync label"]
+[node name="CheckBox" type="CheckBox" parent="Control/vsync_label"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.217
@@ -198,12 +187,7 @@ offset_right = 24.08
 offset_bottom = 24.0
 scale = Vector2(2, 2)
 
-[node name="fps_label" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="pressed" from="Control/back_button" to="Control" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Control/back_button/audio_button" to="Control" method="_on_audio_button_pressed"]
-[connection signal="pressed" from="Control/v-sync label/CheckBox" to="Control" method="_on_vsync_check_box_pressed"]
+[connection signal="pressed" from="Control/vsync_label/CheckBox" to="Control" method="_on_vsync_check_box_pressed"]
 [connection signal="toggled" from="Control/show_fps_option_label/fps_checkbox" to="Control" method="_on_fps_checkbox_toggled"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cruw6niu5mbrv"]
+[gd_scene load_steps=9 format=3 uid="uid://cruw6niu5mbrv"]
 
 [ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_atrl1"]
 [ext_resource type="Script" path="res://assets/scripts/menu_scripts/menu.gd" id="1_hyrqt"]
+[ext_resource type="FontFile" uid="uid://br4r6w55yua4h" path="res://assets/fonts/selawkl.ttf" id="3_aqdqt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huj0e"]
 
@@ -15,6 +16,19 @@
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_hyrqt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 72.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = -1
@@ -110,7 +124,36 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
 text = "Quit"
 
+[node name="Pre-Story_Text" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -60.0
+offset_right = 79.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_aqdqt")
+theme_override_font_sizes/font_size = 100
+text = "Hey!"
+
+[node name="ConfirmButton" type="Button" parent="."]
+offset_left = 1136.0
+offset_top = 656.0
+offset_right = 1176.0
+offset_bottom = 696.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 784.0
+offset_top = 664.0
+offset_right = 1112.0
+offset_bottom = 695.0
+
 [connection signal="pressed" from="startgame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="startgame" to="startgame" method="_on_pressed"]
 [connection signal="pressed" from="options" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

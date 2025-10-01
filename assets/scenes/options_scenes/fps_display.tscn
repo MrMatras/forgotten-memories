@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://br8d6xsli8b6t"]
+
+[ext_resource type="Script" path="res://assets/scripts/options_scripts/fps_global.gd" id="1_vbt6p"]
+[ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_ye1wp"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_vbt6p")
+
+[node name="fps_label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_ye1wp")
+text = "FPS:"
