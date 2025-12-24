@@ -3,4 +3,4 @@
 
 My game is a free project for many people, if you want to help me, I will be very grateful, thanks in advance
 
-The game is developed on Godot 4.1.3
+The game is developed on Godot 4.5.1
