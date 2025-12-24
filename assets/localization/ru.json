@@ -1,0 +1,47 @@
+{
+	"menu": {
+		"title": "Forgotten Memories",
+		"start_game": "Начать игру",
+		"settings": "Настройки",
+		"credits": "Об игре",
+		"quit": "Выход"
+	},
+	"intro": {
+		"hey": "Привет!",
+		"enter_name": "Пожалуйста, введи имя своего персонажа:",
+		"enter_name_placeholder": "Ваше имя...",
+		"confirm": "Подтвердить",
+		"thanks": "Спасибо. Приятной игры."
+	},
+	"pausemenu": {
+		"title": "Пауза",
+		"continue": "Продолжить",
+		"settings_pausemenu": "Настройки",
+		"exit_to_menu": "Выйти в меню"
+	},
+	"options_audio": {
+		"audio_button": "Аудио",
+		"graphics_button": "Графика",
+		"gamesettings_button": "Настройки игры",
+		"back_button": "Назад",
+		"sound": "Громкость",
+		"sfx": "Звук",
+	},
+	"options_graphics": {
+		"audio_button": "Аудио",
+		"graphics_button": "Графика",
+		"gamesettings_button": "Настройки игры",
+		"back_button": "Назад",
+		"res_text": "Разрешение
+		экрана",
+		"window_text": "Вид окна",
+		"vsync_label": "Вертикальная
+		Синхронизация",
+		"show_fps_option_label": "Показывать ФПС",
+		"windowmode_button": {
+			"windowed": "Оконный",
+			"fullscreen": "Полноэкранный",
+			"borderless": "Полноэкранный в окне"
+		}
+	}
+}

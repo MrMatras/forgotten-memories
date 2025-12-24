@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cg4syphkhrv7e"]
 
-[ext_resource type="Script" path="res://assets/scripts/scripts_for_testing/player2.gd" id="1_mng55"]
+[ext_resource type="Script" uid="uid://dppw3uy8v6lw6" path="res://assets/scripts/scripts_for_testing/player2.gd" id="1_mng55"]
 [ext_resource type="AudioStream" uid="uid://dxsijt0j3lm6n" path="res://assets/sounds/analog_mannequin - milkcassettex.mp3" id="2_h0opc"]
-[ext_resource type="Script" path="res://assets/scripts/game_scripts/pausemenu.gd" id="3_vn63v"]
+[ext_resource type="Script" uid="uid://ueyy25ccwd8v" path="res://assets/scripts/game_scripts/pausemenu.gd" id="3_vn63v"]
 [ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_k21y6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1xai"]
@@ -149,7 +149,7 @@ theme_override_font_sizes/font_size = 32
 text = "Continue"
 flat = true
 
-[node name="settings" type="Button" parent="pausemenu/menu/ColorRect"]
+[node name="settings_pausemenu" type="Button" parent="pausemenu/menu/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033
@@ -199,5 +199,5 @@ theme_override_font_sizes/font_size = 53
 text = "Forgotten Memories"
 
 [connection signal="pressed" from="pausemenu/menu/ColorRect/continue" to="pausemenu" method="_on_continue_pressed"]
-[connection signal="pressed" from="pausemenu/menu/ColorRect/settings" to="pausemenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="pausemenu/menu/ColorRect/settings_pausemenu" to="pausemenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="pausemenu/menu/ColorRect/exit_to_menu" to="pausemenu" method="_on_menu_pressed"]

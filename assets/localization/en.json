@@ -1,0 +1,46 @@
+{
+	"menu": {
+		"title": "Forgotten Memories",
+		"start_game": "Start Game",
+		"settings": "Settings",
+		"credits": "Credits",
+		"quit": "Quit"
+	},
+	"intro": {
+		"hey": "Hey!",
+		"enter_name": "Please enter a name for your character:",
+		"enter_name_placeholder": "Your name...",
+		"confirm": "Confirm",
+		"thanks": "Thanks. Enjoy the game"
+	},
+	"pausemenu": {
+		"title": "Forgotten Memories",
+		"continue": "Continue",
+		"settings_pausemenu": "Settings",
+		"exit_to_menu": "Exit to Menu"
+	},
+	"options_audio": {
+		"audio_button": "Audio",
+		"graphics_button": "Graphics",
+		"gamesettings_button": "Game Settings",
+		"back_button": "Back",
+		"sound": "Volume",
+		"sfx": "SFX"
+	},
+	"options_graphics": {
+		"audio_button": "Audio",
+		"graphics_button": "Graphics",
+		"gamesettings_button": "Game Settings",
+		"back_button": "Back",
+		"res_text": "Resolution
+		Mode",
+		"window_text": "Window Mode",
+		"vsync_label": "V-Sync",
+		"show_fps_option_label": "Show FPS",
+		"windowmode_button": {
+			"windowed": "Window",
+			"fullscreen": "Fullscreen",
+			"borderless": "Borderless Fullscreen"
+		}
+	}
+}

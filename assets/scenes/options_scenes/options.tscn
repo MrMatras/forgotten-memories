@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/options_scripts/options_audio.gd" id="1_2y4i8"]
 [ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_j1c1b"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="options_audio" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -87,15 +87,15 @@ anchor_left = 0.088
 anchor_top = 0.324
 anchor_right = 0.088
 anchor_bottom = 0.324
-offset_left = -824.448
+offset_left = -0.447998
 offset_top = 0.0639954
-offset_right = -686.448
+offset_right = 137.552
 offset_bottom = 39.064
 theme_override_fonts/font = ExtResource("1_j1c1b")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
-[node name="HSlider" type="HSlider" parent="Control/sound"]
+[node name="volume_slider" type="HSlider" parent="Control/sound"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.391
@@ -106,6 +106,7 @@ offset_left = 0.0419922
 offset_top = 0.00999928
 offset_right = 400.042
 offset_bottom = 16.01
+value = 100.0
 
 [node name="sfx" type="Label" parent="Control"]
 layout_mode = 1
@@ -114,15 +115,15 @@ anchor_left = 0.088
 anchor_top = 0.435
 anchor_right = 0.088
 anchor_bottom = 0.435
-offset_left = -1072.45
-offset_top = 8.16
-offset_right = -1003.45
-offset_bottom = 47.16
+offset_left = -0.447998
+offset_top = 0.160004
+offset_right = 68.552
+offset_bottom = 39.16
 theme_override_fonts/font = ExtResource("1_j1c1b")
 theme_override_font_sizes/font_size = 40
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="Control/sfx"]
+[node name="sfx_slider" type="HSlider" parent="Control/sfx"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.783
@@ -133,6 +134,8 @@ offset_left = -0.0270233
 offset_top = 0.00499964
 offset_right = 399.973
 offset_bottom = 16.005
+value = 100.0
 
 [connection signal="pressed" from="Control/graphics_button" to="Control" method="_on_graphics_button_pressed"]
 [connection signal="pressed" from="Control/back_button" to="Control" method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Control/sound/volume_slider" to="Control" method="_on_volume_slider_value_changed"]

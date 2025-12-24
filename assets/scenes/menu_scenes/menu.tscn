@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cruw6niu5mbrv"]
+[gd_scene load_steps=11 format=3 uid="uid://cruw6niu5mbrv"]
 
 [ext_resource type="FontFile" uid="uid://cc76tqvboo1gv" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_atrl1"]
-[ext_resource type="Script" path="res://assets/scripts/menu_scripts/menu.gd" id="1_hyrqt"]
+[ext_resource type="Script" uid="uid://bmapj5x3xo8hp" path="res://assets/scripts/menu_scripts/menu.gd" id="1_hyrqt"]
 [ext_resource type="FontFile" uid="uid://br4r6w55yua4h" path="res://assets/fonts/selawkl.ttf" id="3_aqdqt"]
+[ext_resource type="Texture2D" uid="uid://dde728750ptmo" path="res://assets/textures/flags/flag_uk.png" id="4_caxya"]
+[ext_resource type="Texture2D" uid="uid://d6gbecdnk855" path="res://assets/textures/flags/flag_ru.png" id="5_8f0qs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huj0e"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_037pe"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebqmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_037pe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7taxt"]
 
@@ -50,19 +52,20 @@ justification_flags = 0
 
 [node name="startgame" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = -0.125
+anchor_left = 0.037
 anchor_top = 0.252
-anchor_right = -0.125
+anchor_right = 0.037
 anchor_bottom = 0.252
+offset_left = 0.959999
 offset_top = -0.160004
-offset_right = 190.0
+offset_right = 190.96
 offset_bottom = 28.84
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_atrl1")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
 text = "Start Game"
@@ -73,16 +76,16 @@ anchor_left = 0.037
 anchor_top = 0.319
 anchor_right = 0.037
 anchor_bottom = 0.319
-offset_left = -351.04
+offset_left = 0.959999
 offset_top = -0.52002
-offset_right = -199.04
+offset_right = 152.96
 offset_bottom = 31.48
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_atrl1")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
 text = "Settings"
@@ -93,10 +96,10 @@ anchor_left = 0.033
 anchor_top = 0.37
 anchor_right = 0.033
 anchor_bottom = 0.37
-offset_left = -399.36
-offset_top = 8.39999
-offset_right = -250.36
-offset_bottom = 45.4
+offset_left = 0.639999
+offset_top = 0.399994
+offset_right = 149.64
+offset_bottom = 37.4
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_atrl1")
 theme_override_font_sizes/font_size = 32
@@ -110,21 +113,22 @@ anchor_left = 0.037
 anchor_top = 0.437
 anchor_right = 0.037
 anchor_bottom = 0.437
-offset_left = -439.04
+offset_left = 0.959999
 offset_top = 0.039978
-offset_right = -363.04
+offset_right = 76.96
 offset_bottom = 29.04
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_atrl1")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_huj0e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebqmy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_037pe")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7taxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r7jna")
 text = "Quit"
 
 [node name="Pre-Story_Text" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -141,16 +145,59 @@ theme_override_font_sizes/font_size = 100
 text = "Hey!"
 
 [node name="ConfirmButton" type="Button" parent="."]
+visible = false
 offset_left = 1136.0
 offset_top = 656.0
 offset_right = 1176.0
 offset_bottom = 696.0
+focus_mode = 0
 
 [node name="LineEdit" type="LineEdit" parent="."]
+visible = false
 offset_left = 784.0
 offset_top = 664.0
 offset_right = 1112.0
 offset_bottom = 695.0
+
+[node name="flag_uk_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.896
+anchor_right = 0.75
+anchor_bottom = 0.896
+offset_left = 176.0
+offset_top = 40.3199
+offset_right = 272.0
+offset_bottom = 96.3199
+focus_mode = 0
+toggle_mode = true
+icon = ExtResource("4_caxya")
+flat = true
+expand_icon = true
+
+[node name="flag_ru_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.933
+anchor_right = 0.896
+anchor_bottom = 0.933
+offset_left = -0.320068
+offset_top = 0.359985
+offset_right = 79.6799
+offset_bottom = 56.36
+focus_mode = 0
+icon = ExtResource("5_8f0qs")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="gameversion" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.34902)
+offset_left = 1864.0
+offset_top = 1056.0
+offset_right = 1914.0
+offset_bottom = 1082.0
+text = "0.0.7.2"
 
 [connection signal="pressed" from="startgame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="startgame" to="startgame" method="_on_pressed"]

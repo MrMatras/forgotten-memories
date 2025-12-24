@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5gks6vds8nxo"]
+
+[ext_resource type="AudioStream" uid="uid://b2fhoftfisy3l" path="res://assets/sounds/sunrise.mp3" id="1_tc8t4"]
+
+[node name="MenuMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_tc8t4")
+autoplay = true

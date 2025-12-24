@@ -1,15 +1,62 @@
 extends CanvasLayer
 
+@onready var title = $menu/ColorRect/title
+@onready var continue_btn = $menu/ColorRect/continue  
+@onready var settings_btn = $menu/ColorRect/settings_pausemenu
+@onready var exit_btn = $menu/ColorRect/exit_to_menu
+
 var can_player_move = true
 var is_pause_animation_playing = false
 
 func _ready():
-	$menu/ColorRect/title.position.x = -744
-	$menu/ColorRect/continue.position.x = -240
-	$menu/ColorRect/settings.position.x = -376
-	$menu/ColorRect/exit_to_menu.position.x = -552
+	LocalizationAutoload.language_changed.connect(_on_language_changed)
+	update_ui_text()
+	
+	#позиции
+	if title:
+		title.position.x = -744
+	if continue_btn:
+		continue_btn.position.x = -240
+	if settings_btn:
+		settings_btn.position.x = -376
+	if exit_btn:
+		exit_btn.position.x = -552
+	
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
+
+func apply_pause_font(font: Font):
+	#применяем шрифт ко всем элементам
+	if title:
+		title.add_theme_font_override("font", font)
+	if continue_btn:
+		continue_btn.add_theme_font_override("font", font)
+	if settings_btn:
+		settings_btn.add_theme_font_override("font", font)
+	if exit_btn:
+		exit_btn.add_theme_font_override("font", font)
+
+func update_ui_text():
+	var current_locale = LocalizationAutoload.get_current_locale()
+	var font = LocalizationAutoload.get_font_for_locale(current_locale)
+	
+	#применяем шрифт если имеется
+	if font:
+		apply_pause_font(font)
+	
+	#обновляем текст кнопок паузы
+	if title:
+		title.text = LocalizationAutoload.get_text("pausemenu/title")
+	if continue_btn:
+		continue_btn.text = LocalizationAutoload.get_text("pausemenu/continue")
+	if settings_btn:
+		settings_btn.text = LocalizationAutoload.get_text("pausemenu/settings_pausemenu")
+	if exit_btn:
+		exit_btn.text = LocalizationAutoload.get_text("pausemenu/exit_to_menu")
+
+func _on_language_changed(locale: String):
+	update_ui_text()
+	print("Язык паузы изменен на: ", locale)
 
 func _input(event):
 	if event.is_action_pressed("escape") and not is_pause_animation_playing:
@@ -28,10 +75,10 @@ func pause_game():
 	visible = true
 	can_player_move = false
 	var tween = create_tween().set_parallel(true)
-	tween.tween_property($menu/ColorRect/continue, "position:x", 64, 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/settings, "position:x", 64, 1.1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/exit_to_menu, "position:x", 64, 1.2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/title, "position:x", 64, 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(continue_btn, "position:x", 64, 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(settings_btn, "position:x", 64, 1.1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(exit_btn, "position:x", 64, 1.2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(title, "position:x", 64, 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	await tween.finished
 	is_pause_animation_playing = false
 	can_player_move = true
@@ -40,10 +87,10 @@ func resume_game():
 	is_pause_animation_playing = true
 	can_player_move = false
 	var tween = create_tween().set_parallel(true)
-	tween.tween_property($menu/ColorRect/continue, "position:x", -240, 0.7).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/settings, "position:x", -376, 0.6).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/exit_to_menu, "position:x", -552, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($menu/ColorRect/title, "position:x", -744, 0.7).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(continue_btn, "position:x", -240, 0.7).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(settings_btn, "position:x", -376, 0.6).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(exit_btn, "position:x", -552, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(title, "position:x", -744, 0.7).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	await tween.finished
 	visible = false
 	get_tree().paused = false
